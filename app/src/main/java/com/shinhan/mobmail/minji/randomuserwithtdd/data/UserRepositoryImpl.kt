@@ -1,15 +1,15 @@
 package com.shinhan.mobmail.minji.randomuserwithtdd.data
 
 import com.shinhan.mobmail.minji.randomuserwithtdd.DataResult
+import com.shinhan.mobmail.minji.randomuserwithtdd.data.spec.Users
 import com.shinhan.mobmail.minji.randomuserwithtdd.domain.UserRepository
-import com.shinhan.mobmail.minji.randomuserwithtdd.domain.entity.User
 import io.reactivex.Observable
 import io.reactivex.schedulers.Schedulers
 
 class UserRepositoryImpl(
     private val userDataSource: UserDataSource
 ): UserRepository {
-    override fun getUserList(length: Int): Observable<DataResult<ArrayList<User>>> {
+    override fun getUserList(length: Int): Observable<DataResult<Users>> {
         return Observable.create { emitter ->
             emitter.onNext(DataResult.Loading)
 
