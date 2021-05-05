@@ -1,17 +1,11 @@
 package com.shinhan.mobmail.minji.randomuserwithtdd
 
-import android.util.Log
-import com.shinhan.mobmail.minji.randomuserwithtdd.data.UserDataSource
 import com.shinhan.mobmail.minji.randomuserwithtdd.data.UserDataSourceImpl
 import com.shinhan.mobmail.minji.randomuserwithtdd.data.UserRepositoryImpl
+import com.shinhan.mobmail.minji.randomuserwithtdd.data.spec.R_Users
 import com.shinhan.mobmail.minji.randomuserwithtdd.domain.entity.User
-import com.shinhan.mobmail.minji.randomuserwithtdd.domain.usecase.GetUserListUseCase
 import com.shinhan.mobmail.minji.randomuserwithtdd.domain.usecase.GetUserListUseCaseImpl
-import io.reactivex.Observable
 import io.reactivex.Single
-import io.reactivex.android.plugins.RxAndroidPlugins
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
 import junit.framework.Assert.*
 import org.junit.Test
 
@@ -43,7 +37,7 @@ class UserTest {
 
         // then
         assertNotNull(single)
-        assert(single is Single<ArrayList<User>>)
+        assert(single is Single<R_Users>)
     }
 
     @Test

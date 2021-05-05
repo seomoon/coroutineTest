@@ -1,4 +1,4 @@
-package com.shinhan.mobmail.minji.randomuserwithtdd
+package com.shinhan.mobmail.minji.randomuserwithtdd.domain
 
 sealed class DataResult<out T> {
 

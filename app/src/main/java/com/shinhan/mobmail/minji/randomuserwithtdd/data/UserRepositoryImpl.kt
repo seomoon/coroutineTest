@@ -1,8 +1,9 @@
 package com.shinhan.mobmail.minji.randomuserwithtdd.data
 
-import com.shinhan.mobmail.minji.randomuserwithtdd.DataResult
-import com.shinhan.mobmail.minji.randomuserwithtdd.data.spec.Users
+import com.shinhan.mobmail.minji.randomuserwithtdd.domain.DataResult
+import com.shinhan.mobmail.minji.randomuserwithtdd.data.spec.mapper.UserMapper
 import com.shinhan.mobmail.minji.randomuserwithtdd.domain.UserRepository
+import com.shinhan.mobmail.minji.randomuserwithtdd.domain.entity.Users
 import io.reactivex.Observable
 import io.reactivex.schedulers.Schedulers
 
@@ -14,7 +15,7 @@ class UserRepositoryImpl(
             emitter.onNext(DataResult.Loading)
 
             userDataSource.getUserList(length).map {
-                it
+                UserMapper.mapToEntity(it)
             }
                 .subscribeOn(Schedulers.io())
                 .doFinally { emitter.onComplete() }
