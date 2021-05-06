@@ -2,6 +2,7 @@ package com.shinhan.mobmail.minji.randomuserwithtdd.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import com.shinhan.mobmail.minji.randomuserwithtdd.R
@@ -37,6 +38,12 @@ class MainActivity : AppCompatActivity() {
                 list.clear()
                 list.addAll(userList)
                 notifyDataSetChanged()
+
+                if(list.size > 0){
+                    binding.progressBar.visibility = View.GONE
+                } else {
+                    binding.progressBar.visibility = View.VISIBLE
+                }
             }
         }
     }
