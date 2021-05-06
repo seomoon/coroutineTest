@@ -6,7 +6,7 @@ data class Users(
 
 data class User(
     val name: String = EMPTY_STRING,
-    val age: Int = EMPTY_INT,
+    val age: String = EMPTY_STRING,
     val gender: String = EMPTY_STRING,
     val nation: String = EMPTY_STRING,
     val email: String = EMPTY_STRING,
@@ -16,6 +16,5 @@ data class User(
 ) {
     companion object {
         val EMPTY_STRING = ""
-        val EMPTY_INT = 0
     }
 }

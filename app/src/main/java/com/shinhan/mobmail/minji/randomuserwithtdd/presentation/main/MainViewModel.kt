@@ -13,10 +13,11 @@ import io.reactivex.schedulers.Schedulers
 
 class MainViewModel(
     private val getUserListUseCase: GetUserListUseCase
-): ViewModel() {
+) : ViewModel() {
 
-    val userList: LiveData<ArrayList<User>> get() = _userList
     private val _userList = MutableLiveData<ArrayList<User>>()
+    val userList: LiveData<ArrayList<User>>
+        get() = _userList
 
     fun getUserList() {
         getUserListUseCase(10)
@@ -24,12 +25,13 @@ class MainViewModel(
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
                 {
-                    when(it) {
+                    when (it) {
                         is DataResult.Success ->
                             _userList.value = it.data.results
                         else ->
                             _userList.value = arrayListOf()
                     }
+                    Log.i("민지", "userList : ${_userList.value}")
                 },
                 {
 
