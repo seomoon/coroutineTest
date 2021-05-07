@@ -3,6 +3,7 @@ package com.shinhan.mobmail.minji.randomuserwithtdd
 import com.shinhan.mobmail.minji.randomuserwithtdd.data.UserDataSourceImpl
 import com.shinhan.mobmail.minji.randomuserwithtdd.data.UserRepositoryImpl
 import com.shinhan.mobmail.minji.randomuserwithtdd.data.spec.R_Users
+import com.shinhan.mobmail.minji.randomuserwithtdd.data.spec.mapper.UserMapper
 import com.shinhan.mobmail.minji.randomuserwithtdd.domain.entity.User
 import com.shinhan.mobmail.minji.randomuserwithtdd.domain.usecase.GetUserListUseCaseImpl
 import io.reactivex.Single
@@ -15,7 +16,7 @@ class UserTest {
         val user = User()
 
         assertEquals("", user.name)
-        assertEquals(0, user.age)
+        assertEquals("", user.age)
         assertEquals("", user.gender)
         assertEquals("", user.nation)
         assertEquals("", user.email)
@@ -31,13 +32,12 @@ class UserTest {
         val userLength = 10
 
         // when
-        val single = userDataSource.getUserList(userLength).map {
-            it
+        val result = userDataSource.getUserList(userLength).map {
+            UserMapper.mapToEntity(it)
         }
 
         // then
-        assertNotNull(single)
-        assert(single is Single<R_Users>)
+        assertNotNull(result)
     }
 
     @Test
@@ -47,8 +47,10 @@ class UserTest {
         val userLength = 10
 
         // when
+        val result = userRepository.getUserList(userLength)
 
         // then
+        assertNotNull(result)
     }
 
     @Test
