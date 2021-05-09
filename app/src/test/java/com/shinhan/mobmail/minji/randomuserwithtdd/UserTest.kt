@@ -2,9 +2,11 @@ package com.shinhan.mobmail.minji.randomuserwithtdd
 
 import com.shinhan.mobmail.minji.randomuserwithtdd.data.UserDataSourceImpl
 import com.shinhan.mobmail.minji.randomuserwithtdd.data.UserRepositoryImpl
+import com.shinhan.mobmail.minji.randomuserwithtdd.data.spec.R_Users
 import com.shinhan.mobmail.minji.randomuserwithtdd.data.spec.mapper.UserMapper
 import com.shinhan.mobmail.minji.randomuserwithtdd.domain.entity.User
 import com.shinhan.mobmail.minji.randomuserwithtdd.domain.usecase.GetUserListUseCaseImpl
+import io.reactivex.Single
 import junit.framework.Assert.*
 import org.junit.Test
 
@@ -30,12 +32,12 @@ class UserTest {
         val userLength = 10
 
         // when
-        val single = userDataSource.getUserList(userLength).map {
+        val result = userDataSource.getUserList(userLength).map {
             UserMapper.mapToEntity(it)
         }
 
         // then
-        assertNotNull(single)
+        assertNotNull(result)
     }
 
     @Test
