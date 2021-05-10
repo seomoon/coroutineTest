@@ -1,4 +1,4 @@
-package com.shinhan.mobmail.minji.randomuserwithtdd.data
+package com.shinhan.mobmail.minji.randomuserwithtdd.data.retrofit
 
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit

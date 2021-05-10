@@ -1,4 +1,4 @@
-package com.shinhan.mobmail.minji.randomuserwithtdd.presentation
+package com.shinhan.mobmail.minji.randomuserwithtdd.presentation.main
 
 import android.util.Log
 import androidx.lifecycle.LiveData

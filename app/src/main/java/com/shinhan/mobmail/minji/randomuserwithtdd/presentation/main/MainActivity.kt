@@ -1,4 +1,4 @@
-package com.shinhan.mobmail.minji.randomuserwithtdd.presentation
+package com.shinhan.mobmail.minji.randomuserwithtdd.presentation.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,7 +7,7 @@ import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import com.shinhan.mobmail.minji.randomuserwithtdd.R
 import com.shinhan.mobmail.minji.randomuserwithtdd.databinding.ActivityMainBinding
-import com.shinhan.mobmail.minji.randomuserwithtdd.presentation.main.MainAdapter
+import com.shinhan.mobmail.minji.randomuserwithtdd.presentation.ViewModelFactory
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding

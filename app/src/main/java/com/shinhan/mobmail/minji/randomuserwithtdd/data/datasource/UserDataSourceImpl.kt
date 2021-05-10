@@ -1,5 +1,7 @@
-package com.shinhan.mobmail.minji.randomuserwithtdd.data
+package com.shinhan.mobmail.minji.randomuserwithtdd.data.datasource
 
+import com.shinhan.mobmail.minji.randomuserwithtdd.data.retrofit.UserApi
+import com.shinhan.mobmail.minji.randomuserwithtdd.data.retrofit.UserEndpoints
 import com.shinhan.mobmail.minji.randomuserwithtdd.data.spec.R_Users
 import io.reactivex.Single
 import retrofit2.Call
