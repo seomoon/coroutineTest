@@ -8,7 +8,7 @@ import io.reactivex.Observable
 class GetUserListUseCaseImpl(
     private val userRepository: UserRepository
 ): GetUserListUseCase {
-    override fun invoke(length: Int): Observable<DataResult<Users>> {
-        return userRepository.getUserList(length)
+    override fun invoke(size: Int): Observable<DataResult<Users>> {
+        return userRepository.getUserList(size)
     }
 }

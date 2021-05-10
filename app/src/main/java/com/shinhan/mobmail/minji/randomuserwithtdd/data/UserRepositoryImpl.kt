@@ -11,11 +11,11 @@ import io.reactivex.schedulers.Schedulers
 class UserRepositoryImpl(
     private val userDataSource: UserDataSource
 ): UserRepository {
-    override fun getUserList(length: Int): Observable<DataResult<Users>> {
+    override fun getUserList(size: Int): Observable<DataResult<Users>> {
         return Observable.create { emitter ->
             emitter.onNext(DataResult.Loading)
 
-            userDataSource.getUserList(length).map {
+            userDataSource.getUserList(size).map {
                 UserMapper.mapToEntity(it)
             }
                 .subscribeOn(Schedulers.io())

@@ -10,9 +10,9 @@ import retrofit2.Response
 import java.lang.Exception
 
 class UserDataSourceImpl(): UserDataSource {
-    override fun getUserList(length: Int): Single<R_Users> {
+    override fun getUserList(size: Int): Single<R_Users> {
         val request = UserApi.buildService(UserEndpoints::class.java)
-        val call = request.getUsers(length)
+        val call = request.getUsers(size)
 
         return Single.create { emitter ->
             call.enqueue(object : Callback<R_Users> {

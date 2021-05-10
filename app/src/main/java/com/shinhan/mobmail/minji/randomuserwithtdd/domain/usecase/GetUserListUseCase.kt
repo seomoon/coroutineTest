@@ -5,5 +5,5 @@ import com.shinhan.mobmail.minji.randomuserwithtdd.domain.entity.Users
 import io.reactivex.Observable
 
 interface GetUserListUseCase {
-    operator fun invoke(length: Int): Observable<DataResult<Users>>
+    operator fun invoke(size: Int): Observable<DataResult<Users>>
 }
