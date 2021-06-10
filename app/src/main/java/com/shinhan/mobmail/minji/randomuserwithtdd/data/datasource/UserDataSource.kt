@@ -1,8 +1,8 @@
 package com.shinhan.mobmail.minji.randomuserwithtdd.data.datasource
 
 import com.shinhan.mobmail.minji.randomuserwithtdd.data.spec.R_Users
-import io.reactivex.Single
+import com.shinhan.mobmail.minji.randomuserwithtdd.domain.DataResult
 
 interface UserDataSource {
-    fun getUserList(size: Int): Single<R_Users>
+    fun getUserList(size: Int): DataResult<R_Users>
 }
